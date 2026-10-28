@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "billfold"
+version = "0.1.0"
+description = "Boletos e Pix sem dor de cabeça: leia, valide e gere linhas digitáveis, códigos de barras e Pix copia e cola (BR Code) — já com o novo fator de vencimento de 2025."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Yago de Jesus Martins" }]
+keywords = ["pix", "boleto", "br code", "linha digitável", "febraban", "pagamentos", "brasil", "qr code"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Natural Language :: Portuguese (Brazilian)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Office/Business :: Financial",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+qr = ["segno>=1.5"]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6", "segno>=1.5"]
+
+[project.urls]
+Homepage = "https://github.com/yagodejesus/billfold"
+Issues = "https://github.com/yagodejesus/billfold/issues"
+
+[project.scripts]
+billfold = "billfold.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/billfold"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B905", "E741"]

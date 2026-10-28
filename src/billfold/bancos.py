@@ -1,0 +1,40 @@
+"""Códigos de compensação (COMPE) dos bancos mais comuns."""
+
+BANCOS: dict[str, str] = {
+    "001": "Banco do Brasil",
+    "004": "Banco do Nordeste",
+    "021": "Banestes",
+    "033": "Santander",
+    "037": "Banpará",
+    "041": "Banrisul",
+    "047": "Banese",
+    "070": "BRB",
+    "077": "Banco Inter",
+    "085": "Ailos",
+    "104": "Caixa Econômica Federal",
+    "136": "Unicred",
+    "208": "BTG Pactual",
+    "212": "Banco Original",
+    "237": "Bradesco",
+    "260": "Nubank",
+    "290": "PagBank (PagSeguro)",
+    "323": "Mercado Pago",
+    "336": "C6 Bank",
+    "341": "Itaú Unibanco",
+    "389": "Mercantil do Brasil",
+    "422": "Safra",
+    "655": "Banco BV",
+    "748": "Sicredi",
+    "756": "Sicoob",
+}
+
+SEGMENTOS: dict[int, str] = {
+    1: "Prefeituras",
+    2: "Saneamento",
+    3: "Energia elétrica e gás",
+    4: "Telecomunicações",
+    5: "Órgãos governamentais",
+    6: "Carnês e demais empresas (identificadas por CNPJ)",
+    7: "Multas de trânsito",
+    9: "Uso exclusivo do banco",
+}
